@@ -1,9 +1,24 @@
 import './App.css'
 import Signin from './components/Signin'
-import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import Signup from './components/Signup'
-
+import Landing from './components/Landing'
+import { useState, useEffect } from 'react'
 function App() {
+
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer: number = setTimeout(() => {
+      setLoading(false);
+
+     
+    }, 3000); // Adjust the duration as needed
+
+    // Clear the timer on component unmount to avoid memory leaks
+    return () => clearTimeout(timer);
+  }, []);
 
 
   return (
@@ -12,7 +27,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           
-          {/* <Route path="/" element={loading ? <Landing /> : <Navigate to="/signin" />} /> */}
+          <Route path="/" element={loading ? <Landing /> : <Navigate to="/signin" />} />
+          
          
           <Route path='/signin' element={<Signin/>}></Route>
           {/* <Route path='/portfolio' element={<Portfolio/>}></Route>*/}
