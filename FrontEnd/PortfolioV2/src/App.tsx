@@ -1,9 +1,12 @@
 import './App.css'
-import Signin from './components/Signin'
 import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
+import { useState, useEffect } from 'react'
+
+import Signin from './components/Signin'
 import Signup from './components/Signup'
 import Landing from './components/Landing'
-import { useState, useEffect } from 'react'
+import Portfolio from './components/Portfolio'
+
 function App() {
 
   const [loading, setLoading] = useState<boolean>(true);
@@ -28,10 +31,8 @@ function App() {
         <Routes>
           
           <Route path="/" element={loading ? <Landing /> : <Navigate to="/signin" />} />
-          
-         
           <Route path='/signin' element={<Signin/>}></Route>
-          {/* <Route path='/portfolio' element={<Portfolio/>}></Route>*/}
+          <Route path='/portfolio' element={<Portfolio/>}></Route>
           <Route path='/signup' element={<Signup/>}></Route>
 
         </Routes>
