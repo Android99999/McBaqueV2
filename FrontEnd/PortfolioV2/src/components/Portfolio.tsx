@@ -31,7 +31,7 @@ const Portfolio = () => {
                 <h1 className='font-Poppins font-black text-[2em] cursor-pointer text-[#3F3F46] sm:text-[1.8em] md:text-[1.8em]'>BAQUE</h1>
             </div>
 
-            <div className='max-w-[40%] min-w-[60%] sm:hidden md:hidden lg:hidden block'>
+            <div className='max-w-[40%] min-w-[60%] xl:block 2xl:block hidden'>
               <ul className='flex flex-row justify-evenly items-center gap-4 font-Poppins font-semibold text-[1.1em] tracking-widest text-[#3F3F46]'>
                 <li className='cursor-pointer'>ABOUT</li>
                 <li className='cursor-pointer'>EXPERIENCE</li>
@@ -40,7 +40,7 @@ const Portfolio = () => {
               </ul>
             </div>
 
-            <div className='bg-[#475569] max-w-[20%] min-w-[16%] rounded-full sm:hidden md:hidden lg:hidden block text-center'>
+            <div className='bg-[#475569] max-w-[20%] min-w-[16%] rounded-full hidden xl:block 2xl:block text-center'>
               <button className='font-Poppins text-[1.1em] font-semibold px-3.6 py-[0.5em] text-[#DDCFC5] '>Download CV</button>
             </div>
 
