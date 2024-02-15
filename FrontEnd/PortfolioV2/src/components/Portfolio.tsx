@@ -32,11 +32,11 @@ const Portfolio = () => {
             </div>
 
             <div className='max-w-[40%] min-w-[60%] xl:block 2xl:block hidden'>
-              <ul className='flex flex-row justify-evenly items-center gap-4 font-Poppins font-semibold text-[1.1em] tracking-widest text-[#3F3F46]'>
-                <li className='cursor-pointer'>ABOUT</li>
-                <li className='cursor-pointer'>EXPERIENCE</li>
-                <li className='cursor-pointer'>SKILLS</li>
-                <li className='cursor-pointer'>CONTACT</li>
+              <ul className='flex flex-row justify-evenly items-center gap-4 font-Poppins text-[0.4em] tracking-widest text-[#3F3F46]'>
+                              <Navlink Linkto="about">ABOUT</Navlink>                      
+                              <Navlink Linkto="experience">EXPERIENCE</Navlink>
+                              <Navlink Linkto="skills">SKILLS</Navlink>                     
+                              <Navlink Linkto="contact">CONTACT</Navlink>
               </ul>
             </div>
 
@@ -67,10 +67,10 @@ const Portfolio = () => {
                 
                           <div className="w-full h-full flex flex-col items-center justify-between">
                             <ul className="font-Comme pt-[60px] items-center flex flex-col gap-8">
-                              <Navlink Linkto="Home">ABOUT</Navlink>                      
-                              <Navlink Linkto="Products">EXPERIENCE</Navlink>
-                              <Navlink Linkto="AboutUs">SKILLS</Navlink>                     
-                              <Navlink Linkto="ContactUs">CONTACT</Navlink>
+                              <Navlink Linkto="about">ABOUT</Navlink>                      
+                              <Navlink Linkto="experience">EXPERIENCE</Navlink>
+                              <Navlink Linkto="skills">SKILLS</Navlink>                     
+                              <Navlink Linkto="contact">CONTACT</Navlink>
                             </ul>
 
                             <button className="bg-cblue py-[0.6em] px-[2.4em] rounded-full text-cbrown font-bold text-[0.9em]">SIGN OUT</button>
@@ -100,7 +100,7 @@ const Portfolio = () => {
       </div>
 
       {/* About */}
-      <div id="About" className='bg-[#DDCFC5] h-fit w-full flex flex-col justify-start items-center'>
+      <div id="about" className='bg-[#DDCFC5] h-fit w-full flex flex-col justify-start items-center'>
           <div className='flex flex-col justify-between items-center w-[84%] xl:w-[80%] 2xl:w-[80%] xl:gap-[4em] 2xl:gap-[4em]'>
             {/* 1st */}
             <div className='flex flex-col justify-start items-center w-full h-fit py-10 xl:w-[80%] 2xl:w-[80%]'>
