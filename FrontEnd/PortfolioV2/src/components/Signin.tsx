@@ -11,7 +11,7 @@ const Signin = () => {
     const handleSubmit = () : void => {
 
     }
-    const handleSignup = () : void=> {
+    const handleSignin = () : void=> {
         navigate('/signup')
     }
     
@@ -22,9 +22,9 @@ const Signin = () => {
   return (
     <>
         <div className='w-100% h-screen bg-cbrown flex justify-center items-center'>
-            <div className='flex flex-col justify-center items-center px-[3em] gap-4 py-[4em] max-w-[100%] min-w-[30%]'>
+            <div className='flex flex-col justify-center items-center sm:w-[24em] md:w-[24em] lg:w-[26em] xl:w-[26em] 2xl:w-[26em] gap-4 py-[4em] transition-all ease-in-out'>
 
-                <h1 className='font-Lexend font-bold text-8xl text-cred py-10'>Sign In</h1>
+                <h1 className='font-Lexend font-bold sm:text-[5.6em] md:text-[5.6em] lg:text-[5.6em] xl:text-[6em] 2xl:text-[6em] text-cred py-10 transition-all ease-in-out'>Sign In</h1>
 
                 <form onSubmit={handleSubmit} className='flex  flex-col gap-[1.4em] w-[100%]'>
                     
@@ -47,7 +47,7 @@ const Signin = () => {
 
                 <div className='w-full flex flex-row justify-between px-1'>
                     <button className='tracking-wider font-Lexend text-slate-700 text-[0.9em]'>Forget Password?</button>
-                    <button className='tracking-wider font-Lexend text-slate-700 text-[0.9em]' onClick={handleSignup}>I don't have account</button>
+                    <button className='tracking-wider font-Lexend text-slate-700 text-[0.9em]' onClick={handleSignin}>I don't have account</button>
                 </div>
 
                 <div className='flex items-center w-full'>

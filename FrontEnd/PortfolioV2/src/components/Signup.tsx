@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
@@ -34,24 +33,20 @@ const Signup = () => {
     }
 
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) : Promise<void> => {
+
         e.preventDefault()
-        console.log(localURL);
-        console.log(values)
-        console.log(localURL + '/signup')
-       
+
         try {
-       
             const response = await axios.post( localURL+'/signup', values);
     
             console.log(response)
           }catch (error) {
             console.log(error)
-        
           } 
     }
 
-    const handleInput: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    const handleInput: React.ChangeEventHandler<HTMLInputElement> = (e): void => {
         setValues((prev)=>({...prev, [e.target.name]: e.target.value}))
         handleName();
     }
@@ -64,9 +59,9 @@ const Signup = () => {
   return (
     <>
         <div className='w-100% h-screen bg-cbrown flex justify-center items-center'>
-            <div className='flex flex-col justify-center items-center px-[3em] gap-4 py-[4em] max-w-[100%] min-w-[30%]'>
+            <div className='flex flex-col h-full justify-center items-center sm:w-[24em] md:w-[24em] lg:w-[26em] xl:w-[26em] 2xl:w-[26em] gap-4 py-[4em] transition-all ease-in-out'>
 
-                <h1 className='font-Lexend font-bold text-8xl text-cred py-10'>Sign Up</h1>
+                <h1 className='font-Lexend font-bold min-w-full sm:text-[5.6em] md:text-[5.6em] lg:text-[5.6em] xl:text-[6em] 2xl:text-[6em] text-cred py-10 text-center transition-all ease-in-out'>Sign Up</h1>
 
                 <form onSubmit={handleSubmit} className='flex  flex-col gap-[1.4em] w-[100%]'>
                     
@@ -91,7 +86,7 @@ const Signup = () => {
                     
                 </form>
 
-                <div className='w-full flex flex-row justify-end  px-1 '>
+                <div className='w-full flex flex-row justify-end  px-1'>
                     
                     <button className='tracking-wider font-Lexend text-slate-700 text-[0.9em]' onClick={handleSignin}>I have account, Sign in instead</button>
                 </div>

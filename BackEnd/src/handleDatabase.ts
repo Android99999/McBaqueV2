@@ -20,7 +20,7 @@ interface corsvalues {
     optionsSuccessStatus: number,
 }
 
-app.use(cors(<corsvalues>{
+app.use(cors (<corsvalues>{
     origin: ["http://localhost:5173", 'https://mc-baque-portfolio.vercel.app'],
     methods: ["POST", "GET"],
     credentials: true,
@@ -49,7 +49,7 @@ process.on('SIGINT', () => {
 
 
 import { Db, MongoClient, ServerApiVersion } from 'mongodb';
-const uri = "mongodb+srv://vercel-admin-user:iK0FaSM7H6EzlkyF@cluster0.npib522.mongodb.net/?retryWrites=true&w=majority";
+const uri: string = "mongodb+srv://vercel-admin-user:iK0FaSM7H6EzlkyF@cluster0.npib522.mongodb.net/?retryWrites=true&w=majority";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -115,7 +115,7 @@ function startServer(){
 
 
     app.post('/signup', async (req: any, res: any) => {
-        const newData = req.body;
+        const newData: any = req.body;
         console.log(newData);
     
         const emailIsUsed = await emailChecker(req);
@@ -157,6 +157,12 @@ function startServer(){
       
         return hashedPassword;
       }
+
+      
+
+
+
+
 }
 
 run().catch(console.dir);

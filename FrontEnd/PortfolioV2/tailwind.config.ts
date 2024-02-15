@@ -15,10 +15,11 @@ export default {
         Rufina: ['Rufina', 'serif']
       },
       screens: {
-        xs: "550px",
-        md: "850px",
-        xl: "1180px",
-        "2xl": "1280px",
+        sm: {'min': '320px', 'max': '639px'},   // Adjusted max size to cover smaller devices
+        md: {'min': '640px', 'max': '767px'},   // Adjusted min size to avoid overlap with sm
+        lg: {'min': '768px', 'max': '1023px'},  // Adjusted max size for better differentiation
+        xl: {'min': '1024px', 'max': '1279px'}, // Adjusted min size to avoid overlap with lg
+        '2xl': {'min': '1280px'}                // Introduced a new breakpoint for larger screens
       },
       colors: {
         cgray: "#3F3F46",

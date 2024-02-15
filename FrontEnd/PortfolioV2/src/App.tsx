@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     // Simulate loading time
-    const timer: number = setTimeout(() => {
+    const timer = setTimeout(() => {
       setLoading(false);
 
      
