@@ -82,9 +82,9 @@ const Portfolio = () => {
 
         </div>
 
-        <div className=''>
-          <FadeIn direction="down" delay={0.1}>
-            <p className='font-Rufina 2xl:text-[4em] xl:text-[4em] text-[2.8em] text-center font-semibold tracking-wider text-[#3F3F46]'>
+        <div className='flex flex-row justify-start'>
+          <FadeIn direction="right" delay={0.4}>
+            <p className='font-Rufina 2xl:text-[4em] xl:text-[4em] text-[2.8em] text-center xl:text-left 2xl:text-left font-semibold tracking-wider text-[#3F3F46]'>
               Baque (/Ba-Ki/) is  a <br></br>
               entry-level <span className='underline text-[#7C2629]'>Web developer</span> <br></br>
               crafting solutions in lines of Code
