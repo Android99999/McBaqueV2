@@ -2,7 +2,7 @@ import express from "express"; // nodejs framework
 import cors from "cors"; //middleware for security / to received request only to set sites/origin. 
 // import mysql2 from "mysql2"; //liblary for npm and database purpose
 import helmet from 'helmet'; //middleware for security from attacks
-import bycrypt from "bcrypt";
+import bycrypt from "bcrypt"; //for hashing
 import cookieParser from "cookie-parser"; //cookie purposes
 const app = express();
 const port = 8080;

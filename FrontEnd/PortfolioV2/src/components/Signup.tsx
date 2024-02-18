@@ -36,7 +36,7 @@ const Signup = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) : Promise<void> => {
 
         e.preventDefault()
-        console.log(localURL)
+        console.log(localURL+'/signup')
         try {
             const response = await axios.post( localURL+'/signup', values);
             console.log(response)

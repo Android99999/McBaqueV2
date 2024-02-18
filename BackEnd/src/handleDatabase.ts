@@ -21,7 +21,7 @@ interface corsvalues {
 }
 
 app.use(cors (<corsvalues>{
-    origin: ["http://localhost:5173", 'https://mc-baque-portfolio.vercel.app'],
+    origin: ["http://localhost:5173", 'https://mcbaquev2.vercel.app'],
     methods: ["POST", "GET"],
     credentials: true,
     optionsSuccessStatus: 204,
@@ -157,10 +157,6 @@ function startServer(){
       
         return hashedPassword;
       }
-
-      
-
-
 
 
 }
