@@ -1,20 +1,26 @@
 import express from "express"; // nodejs framework
-import cors from "cors"; //middleware for security / to received request only to set sites/origin. 
+// import cors from "cors";//middleware for security / to received request only to set sites/origin. 
 // import mysql2 from "mysql2"; //liblary for npm and database purpose
 import helmet from 'helmet'; //middleware for security from attacks
-import bycrypt from "bcrypt"; //for hashing
+import bycrypt from "bcrypt";
 import cookieParser from "cookie-parser"; //cookie purposes
 const app = express();
 const port = 8080;
 app.use(express.json());
 app.use(helmet());
 app.use(cookieParser());
-app.use(cors({
-    origin: ["http://localhost:5173", 'https://mcbaquev2.vercel.app'],
-    methods: ["POST", "GET"],
-    credentials: true,
-    optionsSuccessStatus: 204,
-}));
+// interface corsvalues {
+//     origin: string[],
+//     methods:string[],
+//     credentials: boolean,
+//     optionsSuccessStatus: number,
+// }
+// app.use(cors (<corsvalues>{
+//     origin: ["http://localhost:5173", 'https://mcbaquev2.vercel.app/'],
+//     methods: ["POST", "GET"],
+//     credentials: true,
+//     optionsSuccessStatus: 204,
+// }))
 app.listen(port, () => {
     console.log(`Server is running on ${port}`);
 });
