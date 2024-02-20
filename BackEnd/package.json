@@ -3,10 +3,10 @@
   "type": "module",
   "version": "1.0.0",
   "description": "",
-  "main": "./build/js/handleDatabase.js",
+  "main": "./build/js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./build/js/handleDatabase.js/handleDatabase.js"
+    "start": "nodemon ./build/js/index.js"
   },
   "keywords": [],
   "author": "",
