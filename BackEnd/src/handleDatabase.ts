@@ -166,6 +166,8 @@ function startServer(){
 run().catch(console.dir);
 
 
+export default app;
+
 
 
   
