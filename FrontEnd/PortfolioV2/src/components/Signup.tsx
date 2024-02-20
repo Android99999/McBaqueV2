@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom'
 const Signup = () => {
     
     axios.defaults.withCredentials = true
-    const localURL = import.meta.env.REACT_APP_API_URL
+    
+    const BackendAPI = import.meta.env.REACT_APP_BackEnd_Route
     const navigate = useNavigate();
 
     interface valuestypes {
@@ -36,9 +37,9 @@ const Signup = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) : Promise<void> => {
 
         e.preventDefault()
-        console.log(localURL+'/signup')
+        console.log(BackendAPI+'/signup')
         try {
-            const response = await axios.post( localURL+'/signup', values);
+            const response = await axios.post(BackendAPI+'/signup', values);
             console.log(response)
           }catch (error) {
             console.log(error)
