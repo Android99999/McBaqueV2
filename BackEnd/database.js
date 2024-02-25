@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
     lastname: { type: String, required: true },
     name: { type: String, required: true },
     email: { type: String, required: true },
-    password: { type: String, required: true }
+    password: { type: String, required: true },
 }, {
     timestamps: true // This will add createdAt and updatedAt fields
 });
@@ -28,33 +28,38 @@ export const insertUser = async (userInput) => {
         name: name,
         email: email,
         password: password,
+        dateCreated: new Date()
     });
     try {
         await newUser.save();
-        console.log('User created successfully:', newUser);
-        return newUser; // Return the newly created user
+        const savedUser = await User.findOne({ _id: newUser._id }, { _id: 1, name: 1, email: 1, dateCreated: 1 });
+        console.log('User created successfully:', savedUser);
+        if (!savedUser) {
+            throw new Error('User not found after creation');
+        }
+        return savedUser; // Return the newly created user
     }
     catch (error) {
         console.error('Error creating user:', error);
         throw error; // Throw the error to be handled by the calling function
     }
 };
-export const emailChecker = async (userEmail, res) => {
+export const emailExist = async (userEmail, res) => {
     try {
         const result = await User.findOne({ email: userEmail }).select('_id name').exec();
         if (result) {
             console.log('Email found:', result);
-            return false;
+            return true;
         }
         else {
             console.log('No Email found.');
-            return true;
+            return false;
         }
     }
     catch (error) {
         console.error(error);
         console.error('Email Check Error');
         res.status(500).json({ message: 'Internal Server Error' });
-        return false;
+        return true;
     }
 };

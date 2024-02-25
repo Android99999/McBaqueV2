@@ -8,6 +8,7 @@ interface IUser extends Document {
     name: string;
     email: string;
     password: string;
+    dateCreated: Date;
 }
 
 // Define the Mongoose schema
@@ -16,7 +17,8 @@ const userSchema: Schema<IUser> = new mongoose.Schema({
     lastname: { type: String, required: true },
     name: { type: String, required: true },
     email: { type: String, required: true },
-    password: { type: String, required: true }
+    password: { type: String, required: true },
+   
 },{
     timestamps: true // This will add createdAt and updatedAt fields
 });
@@ -27,6 +29,14 @@ interface ResultType {
     name: { type: String},
     email: { type: String},
     password: { type: String}
+}
+
+interface createdUser extends Document {
+    _id: mongoose.Types.ObjectId;
+    name: string;
+    email: string
+    dateCreated: Date;
+    // Add other fields as needed
 }
 
 
@@ -42,7 +52,7 @@ export const connectDB = async (mongoURI: string) => {
 
   const User = mongoose.model('User', userSchema, 'Users');
 
-  export const insertUser = async (userInput: any) => {
+  export const insertUser = async (userInput: any): Promise<createdUser> => {
       const {firstname, lastname, name, email, password} = userInput;
   
       const newUser = new User({
@@ -51,12 +61,18 @@ export const connectDB = async (mongoURI: string) => {
           name: name,
           email: email,
           password: password,
+          dateCreated: new Date()
         });
   
       try {
           await newUser.save();
-          console.log('User created successfully:', newUser);
-          return newUser; // Return the newly created user
+          const savedUser = await User.findOne({ _id: newUser._id }, {_id: 1, name: 1, email: 1, dateCreated: 1 });
+          console.log('User created successfully:', savedUser);
+            if (!savedUser) {
+                throw new Error('User not found after creation');
+            }
+           return savedUser; // Return the newly created user
+         
       } catch (error) {
           console.error('Error creating user:', error);
           throw error; // Throw the error to be handled by the calling function
@@ -64,20 +80,20 @@ export const connectDB = async (mongoURI: string) => {
   
   }
 
-  export const emailChecker = async (userEmail: string, res: Response): Promise<boolean> => {
+  export const emailExist = async (userEmail: string, res: Response): Promise<boolean> => {
     try {
         const result: ResultType | null | Object = await User.findOne({ email: userEmail }).select('_id name').exec();
         if (result) {
             console.log('Email found:', result);
-            return false;
+            return true;
         } else {  
             console.log('No Email found.');
-            return true;
+            return false;
         }
     } catch (error) {
         console.error(error);
         console.error('Email Check Error');
         res.status(500).json({ message: 'Internal Server Error' });
-        return false;
+        return true;
     }
   }

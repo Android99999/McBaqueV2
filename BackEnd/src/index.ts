@@ -10,7 +10,7 @@ import cookieParser from "cookie-parser"; //cookie purposes
 import dotenv from 'dotenv';
 
 
-import { connectDB, insertUser, emailChecker } from './database.js';
+import { connectDB, insertUser, emailExist } from './database.js';
 
 const app = express();
 const port: number = 8080;
@@ -45,7 +45,7 @@ app.on('error', (err) => {
 
 // const MongoDB_URI = "mongodb+srv://vercel-admin-user:hBojOvCZeapjKL4j@cluster0.npib522.mongodb.net/?retryWrites=true&w=majority";
 const MongoDB_URI: string = process.env.MongoDB_URI ?? '';
-console.log(MongoDB_URI)
+
 await connectDB(MongoDB_URI);
   
     const passwordHash = async (password: string) => {
@@ -58,8 +58,10 @@ await connectDB(MongoDB_URI);
     app.post('/signup', async (req: Request, res: Response) => {
         try {
             const { firstname, lastname, name, email} = req.body;     
-            const result = await emailChecker(email, res);
+            const result = await emailExist(email, res);
             if(result){
+                res.status(409).json({ message: 'Email is Already used' });
+            }else{ 
                 const password = await passwordHash(req.body.password);
                 const newuser = { firstname, lastname, name, email, password};
                 try {
@@ -69,8 +71,6 @@ await connectDB(MongoDB_URI);
                     console.error(error);
                     res.status(500).json({ message: 'Internal Server Error Result' });
                 }   
-            }else{
-                res.status(409).json({ message: 'Email is Already used' });
             }
 
         } catch (error) {
