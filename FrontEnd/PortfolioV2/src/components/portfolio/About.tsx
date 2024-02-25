@@ -1,5 +1,3 @@
-import React from 'react'
-
 import FadeIn from "../../animations/FadeIn";
 import { BiUser } from "react-icons/bi";
 import { BiEditAlt } from "react-icons/bi";
