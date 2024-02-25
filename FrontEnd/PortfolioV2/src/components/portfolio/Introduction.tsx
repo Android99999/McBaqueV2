@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import Navlink from "../Navlink";
-import FadeIn from "../../animations/FadeIn";
+import FadeIn from "../../animation/FadeIn";
 
 import { Icon } from '@iconify-icon/react';
 import { AiOutlineClose } from "react-icons/ai";
