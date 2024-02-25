@@ -1,7 +1,5 @@
 import mongoose, { Document, Schema } from 'mongoose';
 
-
-
 // Define the schema interface
 interface IUser extends Document {
     firstname: string;

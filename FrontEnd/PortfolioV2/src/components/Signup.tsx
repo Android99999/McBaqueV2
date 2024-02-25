@@ -1,24 +1,15 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { SignupType } from '../types/index'
 
 const Signup = () => {
     
     axios.defaults.withCredentials = true
-    
     const BackendAPI = import.meta.env.REACT_APP_BackEnd_Route
     const navigate = useNavigate();
 
-    interface valuestypes {
-        firstname: string,
-        lastname: string,
-        name: string,
-        email: string,
-        password: string,
-
-    }
-
-    const [values, setValues] = useState<valuestypes>({
+    const [values, setValues] = useState<SignupType>({
         firstname: '',
         lastname: '',
         name:'',
@@ -29,13 +20,12 @@ const Signup = () => {
 
     const handleName = (): void => {
         const {firstname, lastname} = values;
-        const fullname : string = `${firstname} ${lastname}`
+        const fullname: string = `${firstname} ${lastname}`
         setValues((prev)=>({...prev, name: fullname}))
     }
 
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) : Promise<void> => {
-
         e.preventDefault()
         console.log(BackendAPI+'/signup')
         try {
@@ -51,7 +41,7 @@ const Signup = () => {
         handleName();
     }
 
-    const handleSignin = () => {
+    const handleSignin = (): void => {
         navigate('/signin')
     }
 

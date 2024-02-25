@@ -9,8 +9,8 @@ import { AiOutlineClose } from "react-icons/ai";
 import { Icon } from '@iconify-icon/react';
 
 import {useState} from "react";
-import Navlink from "../Utils/Navlink";
-import FadeIn from "../Animations/FadeIn";
+import Navlink from "./Navlink";
+import FadeIn from "../animations/FadeIn";
 
 
 const Portfolio = () => {
@@ -199,6 +199,14 @@ const Portfolio = () => {
           </div>
       </div>
         {/* ABOUT END */}
+
+      <div id="experience" className='bg-[#DDCFC5] h-fit w-full flex flex-col justify-start items-center'>
+        <div className='flex flex-col justify-between items-center w-[84%] xl:w-[80%] 2xl:w-[80%] xl:gap-[4em] 2xl:gap-[4em] bg-slate-400'>
+              <h1>EXPERIENCE</h1>
+              <div></div>
+
+        </div>
+      </div>
 
 
 
