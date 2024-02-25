@@ -3,7 +3,7 @@ import express, { Response, Request } from "express"; // nodejs framework
 import cors from "cors";//middleware for security / to received request only to set sites/origin. 
 // import mysql2 from "mysql2"; //liblary for npm and database purpose
 import helmet from 'helmet'//middleware for security from attacks
-import bycrypt from "bcrypt"
+import bycrypt from "bcryptjs"
 
 import cookieParser from "cookie-parser"; //cookie purposes
 
@@ -60,6 +60,7 @@ await connectDB(MongoDB_URI);
             const result = await emailChecker(email, res);
             if(result){
                 const password = await passwordHash(req.body.password);
+
                 const newuser = { firstname, lastname, name, email, password};
                 try {
                     const createdUser = await insertUser(newuser);
