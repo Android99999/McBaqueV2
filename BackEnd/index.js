@@ -2,8 +2,9 @@ import express from "express"; // nodejs framework
 import cors from "cors"; //middleware for security / to received request only to set sites/origin. 
 // import mysql2 from "mysql2"; //liblary for npm and database purpose
 import helmet from 'helmet'; //middleware for security from attacks
+import bycrypt from "bcrypt";
 import cookieParser from "cookie-parser"; //cookie purposes
-import { connectDB, insertUser } from './database.js';
+import { connectDB, insertUser, emailChecker } from './database.js';
 const app = express();
 const port = 8080;
 app.use(express.json());
@@ -24,26 +25,34 @@ app.on('error', (err) => {
 });
 const MongoDB_URI = "mongodb+srv://vercel-admin-user:hBojOvCZeapjKL4j@cluster0.npib522.mongodb.net/?retryWrites=true&w=majority";
 await connectDB(MongoDB_URI);
-// const emailChecker = async (req: any, res?: any) => {
-//   const emailData = req.body.email
-// }
-// const passwordHash = async (req: any) => {
-//   const password: string = req.body.password
-//   const saltRounds: number= 4;
-//   const salt: string = await bycrypt.genSalt(saltRounds)
-//   const hashedPassword: string = await bycrypt.hash(password, salt);
-//   return hashedPassword;
-// }
+const passwordHash = async (password) => {
+    const saltRounds = 4;
+    const salt = await bycrypt.genSalt(saltRounds);
+    const hashedPassword = await bycrypt.hash(password, salt);
+    return hashedPassword;
+};
 app.post('/signup', async (req, res) => {
-    const { firstname, lastname, name, email, password } = req.body;
-    const newuser = { firstname, lastname, name, email, password };
     try {
-        const createdUser = await insertUser(newuser);
-        res.status(200).json({ response: { message: 'User created successfully', user: createdUser } });
+        const { firstname, lastname, name, email } = req.body;
+        const result = await emailChecker(email, res);
+        if (result) {
+            const password = await passwordHash(req.body.password);
+            const newuser = { firstname, lastname, name, email, password };
+            try {
+                const createdUser = await insertUser(newuser);
+                res.status(200).json({ response: { message: 'User created successfully', user: createdUser } });
+            }
+            catch (error) {
+                console.error(error);
+                res.status(500).json({ message: 'Internal Server Error Result' });
+            }
+        }
+        else {
+            res.status(409).json({ message: 'Email is Already used' });
+        }
     }
     catch (error) {
-        console.error(error);
-        res.status(500).json({ message: 'Internal Server Error' });
+        res.status(500).json({ message: 'Internal Server Error Signup' });
     }
 });
 export default app;

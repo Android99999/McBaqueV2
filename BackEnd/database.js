@@ -6,6 +6,8 @@ const userSchema = new mongoose.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true }
+}, {
+    timestamps: true // This will add createdAt and updatedAt fields
 });
 export const connectDB = async (mongoURI) => {
     try {
@@ -35,5 +37,24 @@ export const insertUser = async (userInput) => {
     catch (error) {
         console.error('Error creating user:', error);
         throw error; // Throw the error to be handled by the calling function
+    }
+};
+export const emailChecker = async (userEmail, res) => {
+    try {
+        const result = await User.findOne({ email: userEmail }).select('_id name').exec();
+        if (result) {
+            console.log('Email found:', result);
+            return false;
+        }
+        else {
+            console.log('No Email found.');
+            return true;
+        }
+    }
+    catch (error) {
+        console.error(error);
+        console.error('Email Check Error');
+        res.status(500).json({ message: 'Internal Server Error' });
+        return false;
     }
 };

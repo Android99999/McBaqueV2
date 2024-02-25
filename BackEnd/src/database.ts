@@ -1,4 +1,5 @@
 import mongoose, { Document, Schema } from 'mongoose';
+import { Response } from 'express';
 
 // Define the schema interface
 interface IUser extends Document {
@@ -16,7 +17,17 @@ const userSchema: Schema<IUser> = new mongoose.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true }
+},{
+    timestamps: true // This will add createdAt and updatedAt fields
 });
+
+interface ResultType {
+    firstname: { type: String},
+    lastname: { type: String },
+    name: { type: String},
+    email: { type: String},
+    password: { type: String}
+}
 
 
 export const connectDB = async (mongoURI: string) => {
@@ -28,7 +39,6 @@ export const connectDB = async (mongoURI: string) => {
       process.exit(1); // Exit with failure
     }
   };
-
 
   const User = mongoose.model('User', userSchema, 'Users');
 
@@ -52,4 +62,22 @@ export const connectDB = async (mongoURI: string) => {
           throw error; // Throw the error to be handled by the calling function
       }
   
+  }
+
+  export const emailChecker = async (userEmail: string, res: Response): Promise<boolean> => {
+    try {
+        const result: ResultType | null | Object = await User.findOne({ email: userEmail }).select('_id name').exec();
+        if (result) {
+            console.log('Email found:', result);
+            return false;
+        } else {  
+            console.log('No Email found.');
+            return true;
+        }
+    } catch (error) {
+        console.error(error);
+        console.error('Email Check Error');
+        res.status(500).json({ message: 'Internal Server Error' });
+        return false;
+    }
   }
