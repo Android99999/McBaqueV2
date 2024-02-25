@@ -14,5 +14,11 @@ export const useNavigation = () => {
     const navigatePortfolio = (): void => {
         navigate('/portfolio');
     };
+
+    //add custome navigate
+    // const navigateCustom = (params: string): void => {
+    //     navigate(`/portfolio/${params}`);
+    // }; if just needed
+    
     return { navigateSignin, navigateSignup, navigatePortfolio };
 };
