@@ -8,6 +8,8 @@ import { AiOutlineClose } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
 
+import { DownloadCV } from '../../utils/download'
+
 
 
 export const Introduction = () => {
@@ -38,7 +40,7 @@ export const Introduction = () => {
                     </div>
 
                     <div className='bg-[#475569] max-w-[20%] min-w-[16%] rounded-full hidden xl:block 2xl:block text-center'>
-                        <button className='font-Poppins text-[1.1em] font-semibold px-3.6 py-[0.5em] text-[#DDCFC5] '>Download CV</button>
+                        <button className='font-Poppins text-[1.1em] font-semibold px-3.6 py-[0.5em] text-[#DDCFC5] ' onClick={DownloadCV}>Download CV</button>
                     </div>
 
                 

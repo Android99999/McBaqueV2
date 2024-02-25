@@ -5,3 +5,7 @@ export interface SignupType {
     email: string,
     password: string,
 }
+
+export interface DownloadType {
+    path: string,
+}
