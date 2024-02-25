@@ -4,12 +4,14 @@ import cors from "cors"; //middleware for security / to received request only to
 import helmet from 'helmet'; //middleware for security from attacks
 import bycrypt from "bcryptjs";
 import cookieParser from "cookie-parser"; //cookie purposes
+import dotenv from 'dotenv';
 import { connectDB, insertUser, emailChecker } from './database.js';
 const app = express();
 const port = 8080;
 app.use(express.json());
 app.use(helmet());
 app.use(cookieParser());
+dotenv.config();
 app.use(cors({
     origin: ["http://localhost:5173", 'https://mcbaquev2.vercel.app', 'https://mcbaquev2.vercel.app/'],
     methods: ["POST", "GET"],
@@ -23,7 +25,9 @@ app.listen(port, () => {
 app.on('error', (err) => {
     console.error('Server error:', err);
 });
-const MongoDB_URI = "mongodb+srv://vercel-admin-user:hBojOvCZeapjKL4j@cluster0.npib522.mongodb.net/?retryWrites=true&w=majority";
+// const MongoDB_URI = "mongodb+srv://vercel-admin-user:hBojOvCZeapjKL4j@cluster0.npib522.mongodb.net/?retryWrites=true&w=majority";
+const MongoDB_URI = process.env.MongoDB_URI ?? '';
+console.log(MongoDB_URI);
 await connectDB(MongoDB_URI);
 const passwordHash = async (password) => {
     const saltRounds = 4;

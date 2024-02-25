@@ -7,6 +7,9 @@ import bycrypt from "bcryptjs"
 
 import cookieParser from "cookie-parser"; //cookie purposes
 
+import dotenv from 'dotenv';
+
+
 import { connectDB, insertUser, emailChecker } from './database.js';
 
 const app = express();
@@ -15,6 +18,7 @@ const port: number = 8080;
 app.use(express.json());
 app.use(helmet());
 app.use(cookieParser());
+dotenv.config();
 
 interface corsvalues {
     origin: string[],
@@ -30,10 +34,6 @@ app.use(cors (<corsvalues>{
     optionsSuccessStatus: 204,
 }))
 
-
-
-
-
 app.listen(port, () => {
     console.log(`Server is running on ${port}`)
 })
@@ -43,8 +43,9 @@ app.on('error', (err) => {
     console.error('Server error:', err);
 });
 
-const MongoDB_URI = "mongodb+srv://vercel-admin-user:hBojOvCZeapjKL4j@cluster0.npib522.mongodb.net/?retryWrites=true&w=majority";
-
+// const MongoDB_URI = "mongodb+srv://vercel-admin-user:hBojOvCZeapjKL4j@cluster0.npib522.mongodb.net/?retryWrites=true&w=majority";
+const MongoDB_URI: string = process.env.MongoDB_URI ?? '';
+console.log(MongoDB_URI)
 await connectDB(MongoDB_URI);
   
     const passwordHash = async (password: string) => {
@@ -60,7 +61,6 @@ await connectDB(MongoDB_URI);
             const result = await emailChecker(email, res);
             if(result){
                 const password = await passwordHash(req.body.password);
-
                 const newuser = { firstname, lastname, name, email, password};
                 try {
                     const createdUser = await insertUser(newuser);
