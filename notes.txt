@@ -2,3 +2,23 @@ react hook forms - for input validators.
 
 Oauth
 tokens
+
+Here's a suggested learning path to dive deeper into each topic:
+
+Start with OAuth:
+
+Read OAuth 2.0 documentation and tutorials to understand the basics.
+Implement OAuth authentication in a sample application using a popular OAuth provider (e.g., Google, Facebook, GitHub).
+Next, focus on Tokens:
+
+Learn about different types of tokens and their purposes.
+Implement token-based authentication in your application using access tokens and refresh tokens.
+Then, move on to JWT:
+
+Study JWT specifications and best practices.
+Implement JWT-based authentication and authorization in your application.
+Explore libraries and frameworks that support JWT authentication (e.g., Passport.js for Node.js).
+Finally, learn about localStorage:
+
+Experiment with storing and retrieving data using localStorage in a simple web application.
+Explore advanced localStorage features, such as managing storage limits, handling data expiration, and synchronizing data across browser tabs.

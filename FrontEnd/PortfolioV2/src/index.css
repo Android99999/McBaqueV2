@@ -3,3 +3,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-slick .slick-slide{
+
+    object-fit: contain;
+    display: flex;
+    flex-direction: row;
+    ;
+}
