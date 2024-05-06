@@ -27,7 +27,7 @@ export const Introduction = () => {
                 <div className='h-fit w-full flex flex-row justify-between items-center py-6'>
 
                     <div className=''>
-                        <h1 className='font-Poppins font-black text-[2em] cursor-pointer text-[#3F3F46] sm:text-[1.8em] md:text-[1.8em]'>BAQUE</h1>
+                        <h1 className='font-Poppins font-black text-[2em] cursor-pointer text-[#3F3F46] sm:text-[1.4em] md:text-[1.8em]'>BAQUE</h1>
                     </div>
 
                     <div className='max-w-[40%] min-w-[60%] xl:block 2xl:block hidden'>
@@ -81,7 +81,7 @@ export const Introduction = () => {
 
                 <div className='flex flex-row justify-start'>
                     <FadeIn direction="right" delay={0.4}>
-                        <p className='font-Rufina 2xl:text-[4em] xl:text-[4em] text-[2.8em] text-center xl:text-left 2xl:text-left font-semibold tracking-wider text-[#3F3F46]'>
+                        <p className='font-Rufina 2xl:text-[4em] xl:text-[4em] text-[2.8em] sm:text-[1.8em] text-center xl:text-left 2xl:text-left font-semibold tracking-wider text-[#3F3F46]'>
                         Baque (/Ba-Ki/) is  a <br></br>
                         entry-level <span className='underline text-[#7C2629]'>Web developer</span> <br></br>
                         crafting solutions in lines of Code

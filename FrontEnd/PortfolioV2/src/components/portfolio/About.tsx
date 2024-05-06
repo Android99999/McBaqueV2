@@ -55,9 +55,9 @@ export const About = () => {
                       <div className='min-w-[10%] flex flex-col min-h-[90%] py-[2em] '> 
                         <div className='flex flex-col h-[50%] justify-center items-center xl:justify-start xl:items-start 2xl:justify-start 2xl:items-start'>
                           <div className='h-[50%]'><BiUser size={65}  color='#3F3F46' /></div>
-                          <div className='h-[50%] py-4 text-[2em] font-Poppins font-semibold tracking-widest text-[#7C2629] '>Who I am</div>
+                          <div className='h-[50%] py-4 text-[2em] font-Poppins font-semibold tracking-widest text-[#7C2629] sm:text-[1.2em]'>Who I am</div>
                         </div>
-                        <div className='w-full h-[50%] font-Poppins font-thin text-[1.4em] py-4 tracking-[0.14em] lg:text-center md:text-center sm:text-center'>
+                        <div className='w-full h-[50%] font-Poppins font-thin text-[1.4em] py-4 tracking-[0.14em] lg:text-center md:text-center sm:text-center sm:text-[1em]'>
                           <p>Web Developer with expertise in both frontend and backend technologies.</p>
                         </div>
                       </div>
