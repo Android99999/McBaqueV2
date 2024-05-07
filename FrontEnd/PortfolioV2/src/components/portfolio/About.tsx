@@ -22,7 +22,7 @@ export const About = () => {
             <div className='flex flex-row justify-center items-center w-full h-fit gap-3'>         
               <div className='w-[30%] h-[0.12em] '></div>
               <FadeIn direction="left" delay={0.1}>
-                <div className='min-w-[6em] xl:py-[1.4em] 2xl:py-[1.4em] text-center font-Poppins font-bold text-cgray text-[1.2em] xl:text-[2em] 2xl:text-[2em] tracking-widest'>
+                <div className='min-w-[8em] xl:py-[1.4em] 2xl:py-[1.4em] text-center font-Poppins font-bold text-cgray text-[1.4em] xl:text-[2em] 2xl:text-[2em] tracking-widest'>
                   ABOUT ME  
                 </div>
               </FadeIn>
@@ -128,9 +128,9 @@ export const About = () => {
                       <div className='min-w-[10%] flex flex-col min-h-[90%] py-[2em] '> 
                         <div className='flex flex-col h-[50%] justify-center items-center'>
                           <div className='h-[50%]'><BiUser size={65}  color='#3F3F46' /></div>
-                          <div className='h-[50%] py-4 text-[1.8em] font-Poppins font-bold tracking-widest text-[#7C2629] '>WHO I AM</div>
+                          <div className='h-[50%] py-4 text-[1.5em] font-Poppins font-bold tracking-widest text-[#7C2629] '>WHO I AM</div>
                         </div>
-                        <div className='w-full h-[50%] font-Poppins font-thin text-[1.4em] py-4 tracking-[0.14em] lg:text-center md:text-center sm:text-center text-[#3F3F46]'>
+                        <div className='w-full h-[50%] font-Poppins font-thin text-[1.3em] py-4 tracking-[0.14em] lg:text-center md:text-center sm:text-center text-[#3F3F46]'>
                           <p>Web Developer with expertise in both frontend and backend technologies.</p>
                         </div>
                       </div>
@@ -142,9 +142,9 @@ export const About = () => {
                       <div className='min-w-[20%] flex flex-col min-h-[90%] py-[2em]'>
                         <div className='flex flex-col h-[50%] justify-center items-center xl:justify-start xl:items-start 2xl:justify-start 2xl:items-start text-[#3F3F46]'>
                           <div className='h-[50%] '><BiEditAlt size={65}  color='#3F3F46'/></div>
-                          <div className='h-[50%] py-4 text-[1.8em] font-Poppins font-bold tracking-widest text-[#7C2629] '>WHAT I DO</div>
+                          <div className='h-[50%] py-4 text-[1.5em] font-Poppins font-bold tracking-widest text-[#7C2629] '>WHAT I DO</div>
                         </div>
-                        <div className='min-w-[20%] h-[50%] font-Poppins font-thin text-[1.3em] tracking-[0.15em] py-4 lg:text-center md:text-center sm:text-center'>
+                        <div className='min-w-[20%] h-[50%] font-Poppins font-thin text-[1.3em] tracking-[0.14em] py-4 lg:text-center md:text-center sm:text-center'>
                           <p>Excels in delivering solutions, ranging from responsive designs to complex web applications.</p>
                         </div>
                       </div>
@@ -155,7 +155,7 @@ export const About = () => {
                       <div className='min-w-[20%] flex flex-col min-h-[90%] py-[2.2em]'>
                         <div className='flex flex-col h-[50%] justify-center items-center xl:justify-start xl:items-start 2xl:justify-start 2xl:items-start'>
                             <div  className='h-[50%]'><BiCheckDouble size={65} color='#3F3F46'/></div>
-                              <div className='h-[50%] py-4 text-[1.8em] font-Poppins font-bold text-[#7C2629] tracking-widest'>WHY CHOOSE ME</div>
+                              <div className='h-[50%] py-4 text-[1.5em] font-Poppins font-bold text-[#7C2629] tracking-widest'>WHY CHOOSE ME</div>
                         </div>
                         <div className='max-w-[100%] h-[50%] font-Poppins font-thin text-[1.3em] tracking-[0.14em] py-4 lg:text-center md:text-center sm:text-center text-[#3F3F46]'>
                               <p>Consistently exceeds client expectations through innovative and future-proof solutions</p>

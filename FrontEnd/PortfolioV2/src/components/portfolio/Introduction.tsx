@@ -96,15 +96,15 @@ export const Introduction = () => {
 
                     <div className='flex flex-row gap-5'>
                         <FadeIn direction="right" delay={0.2}>
-                            <FaLinkedin color='#3F3F46' size={50} className='cursor-pointer'
+                            <FaLinkedin color='#3F3F46' className='cursor-pointer w-[2em] h-[2em] 2xl:h-[4em] xl:h-[4em] 2xl:w-[4em] xl:w-[4em]'
                              onClick={() => handleRedirectToURL({ url: 'https://www.linkedin.com/in/mcbaque/' })}
-                             
+
                             />
 
                         </FadeIn>
 
                         <FadeIn  direction="right" delay={0.4}>
-                            <FaGithubSquare color='#3F3F46' size={50} className='cursor-pointer' 
+                            <FaGithubSquare color='#3F3F46' size={50} className='cursor-pointer w-[2em] h-[2em] 2xl:h-[4em] xl:h-[4em] 2xl:w-[4em] xl:w-[4em]' 
                             onClick={() => handleRedirectToURL({ url: 'https://github.com/McBaque01' })}
 
                             />
