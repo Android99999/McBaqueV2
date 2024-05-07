@@ -42,7 +42,7 @@ export const Introduction = () => {
                     {/* <div className='bg-[#475569] max-w-[20%] min-w-[16%] rounded-full hidden xl:block 2xl:block text-center '>
                         <button className='font-Poppins text-[1.1em] font-semibold text-[#DDCFC5] min-w-fit text-center bg-slate-500 max-w-[20%] min-w-[16%] rounded-full hidden xl:block 2xl:block text-center' onClick={DownloadCV}>Download CV</button>
                     </div> */}
-                    <button className='font-Poppins text-[1.1em] px-[2em] py-[0.4em] font-semibold text-[#DDCFC5] min-w-fit text-center bg-slate-500  rounded-full hidden xl:block 2xl:block ' onClick={DownloadCV}>Download CV</button>
+                    <button className='font-Poppins text-[1.1em] px-[2em] py-[0.4em] font-semibold text-[#DDCFC5] min-w-fit text-center bg-[#475569]  rounded-full hidden xl:block 2xl:block ' onClick={DownloadCV}>Download CV</button>
 
                 
                     {/*For Mobile Navigation */}
@@ -65,13 +65,18 @@ export const Introduction = () => {
                                 />
                         
                                 <div className="w-full h-full flex flex-col items-center justify-between">
-                                    <ul className="font-Comme pt-[60px] items-center flex flex-col gap-8">
+                                    <div className="font-Comme pt-[60px] items-center flex flex-col gap-8">
                                         <Navlink Linkto="about">ABOUT</Navlink>                      
                                         <Navlink Linkto="experience">EXPERIENCE</Navlink>
                                         <Navlink Linkto="skills">SKILLS</Navlink>                     
                                         <Navlink Linkto="contact">CONTACT</Navlink>
-                                    </ul>
+                                        <button className='font-Poppins text-[1.1em] px-[2em] py-[0.4em] font-semibold text-[#DDCFC5] min-w-fit text-center bg-[#475569]  rounded-full '
+                                        onClick={DownloadCV}>Download CV</button>
+                                    </div>
+
+                                   
                                     <button className="bg-cblue py-[0.6em] px-[2.4em] rounded-full text-cbrown font-bold text-[0.9em]">SIGN OUT</button>
+                                   
                                 </div>
 
                         </div>

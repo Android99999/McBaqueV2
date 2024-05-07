@@ -5,10 +5,10 @@ export const Experience = () => {
   return (
     <>
     <div id="experience" className='h-fit xl:h-fit 2xl:h-fit w-[84%] xl:w-[80%] 2xl:w-[80%] flex flex-col  py-[2em] xl:py-[4em] 2xl:py-[4em] text-[#3F3F46]'>
-        <div className='flex w-full h-fit flex-col font-Poppins text-[1.2em] sm:gap-[2em] md:gap-[2em] lg:gap-[2em]'>
+        <div className='flex w-full h-fit flex-col font-Poppins text-[1.2em] gap-[2em]'>
 
             <FadeIn direction='right' fullWidth={false}>
-                <h1 className=' text-[2em] font-bold tracking-widest sm:text-[1.4em]'>EXPERIENCE</h1>
+                <h1 className=' text-[2em] font-bold tracking-widest sm:text-[1.4em] md:text-[1.4em] lg:text-[1.4em]'>EXPERIENCE</h1>
             </FadeIn>
 
 
