@@ -31,17 +31,18 @@ export const Introduction = () => {
                     </div>
 
                     <div className='max-w-[40%] min-w-[60%] xl:block 2xl:block hidden'>
-                        <ul className='flex flex-row justify-evenly items-center gap-4 font-Poppins text-[0.4em] tracking-widest text-[#3F3F46]'>
+                        <div className='flex flex-row justify-evenly items-center gap-4 font-Poppins text-[0.4em] tracking-widest text-[#3F3F46]'>
                                         <Navlink Linkto="about">ABOUT</Navlink>                      
                                         <Navlink Linkto="experience">EXPERIENCE</Navlink>
                                         <Navlink Linkto="skills">SKILLS</Navlink>                     
                                         <Navlink Linkto="contact">CONTACT</Navlink>
-                        </ul>
+                        </div>
                     </div>
 
-                    <div className='bg-[#475569] max-w-[20%] min-w-[16%] rounded-full hidden xl:block 2xl:block text-center'>
-                        <button className='font-Poppins text-[1.1em] font-semibold px-3.6 py-[0.5em] text-[#DDCFC5] ' onClick={DownloadCV}>Download CV</button>
-                    </div>
+                    {/* <div className='bg-[#475569] max-w-[20%] min-w-[16%] rounded-full hidden xl:block 2xl:block text-center '>
+                        <button className='font-Poppins text-[1.1em] font-semibold text-[#DDCFC5] min-w-fit text-center bg-slate-500 max-w-[20%] min-w-[16%] rounded-full hidden xl:block 2xl:block text-center' onClick={DownloadCV}>Download CV</button>
+                    </div> */}
+                    <button className='font-Poppins text-[1.1em] px-[2em] py-[0.4em] font-semibold text-[#DDCFC5] min-w-fit text-center bg-slate-500  rounded-full hidden xl:block 2xl:block ' onClick={DownloadCV}>Download CV</button>
 
                 
                     {/*For Mobile Navigation */}

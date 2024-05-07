@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 interface handleRedirectToURLPropsType {
     url:string,
 }
