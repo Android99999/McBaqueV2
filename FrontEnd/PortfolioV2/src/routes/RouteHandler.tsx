@@ -13,7 +13,7 @@ export const RouteHandler = () => {
         <Route path='/signin' element={<Signin/>}/>
         <Route path='/portfolio' element={<Portfolio/>}/>
         <Route path='/signup' element={<Signup/>}/>
-
+      
       </Routes>
   </BrowserRouter>
   )

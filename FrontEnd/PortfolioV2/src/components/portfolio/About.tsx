@@ -38,7 +38,7 @@ export const About = () => {
             <div className='flex flex-col justify-start items-center w-full h-fit py-10 xl:w-[80%] 2xl:w-[80%]'>
               <div className='flex flex-col justify-center items-center h-fit]'>
                 <FadeIn direction="right" delay={0.2}>
-                  <p className='text-center font-Rufina xl:text-[2.7em] 2xl:text-[3em] text-[1.6em] tracking-widest font-bold text-[#3F3F46]'>
+                  <p className='text-center font-Rufina xl:text-[2.7em] 2xl:text-[2.7em] text-[1.6em] tracking-widest font-bold text-[#3F3F46]'>
                     Enthusiastic Web Developer with a Passion for Crafting Digital Experiences
                   </p>
                 </FadeIn>
@@ -52,26 +52,33 @@ export const About = () => {
 
                   <div className="flex-1">
                     <FadeIn direction="right" delay={0.4}>
-                      <div className='min-w-[10%] flex flex-col min-h-[90%] py-[2em] '> 
+                      <div className='flex flex-col'> 
+
                         <div className='flex flex-col h-[50%] justify-center items-center xl:justify-start xl:items-start 2xl:justify-start 2xl:items-start'>
-                          <div className='h-[50%]'><BiUser size={65}  color='#3F3F46' /></div>
-                          <div className='h-[50%] py-4 text-[2em] font-Poppins font-semibold tracking-widest text-[#7C2629] sm:text-[1.2em]'>Who I am</div>
-                        </div>
-                        <div className='w-full h-[50%] font-Poppins font-thin text-[1.4em] py-4 tracking-[0.14em] lg:text-center md:text-center sm:text-center sm:text-[1em]'>
+                          <div className='h-[50%] border-l-[4px] border-[#7C2629] px-2 w-full'><BiUser size={65}  color='#3F3F46' /></div>
+                          <div className='h-[50%] py-3 text-[2em] font-Poppins font-semibold tracking-widest text-[#7C2629]'>Who I am</div>
+                        </div> 
+
+                        <div className='w-full h-[50%] font-Poppins
+                         font-thin text-[1.4em] tracking-[0.14em] lg:text-center md:text-center
+                          sm:text-center sm:text-[1em] text-[#3F3F46]'>
                           <p>Web Developer with expertise in both frontend and backend technologies.</p>
                         </div>
+
                       </div>
                     </FadeIn>
                   </div>
 
                   <div className="flex-1">
                     <FadeIn direction="right" delay={0.6}>
-                      <div className='min-w-[20%] flex flex-col min-h-[90%] py-[2em]'>
+                      <div className='flex flex-col '>
                         <div className='flex flex-col h-[50%] justify-center items-center xl:justify-start xl:items-start 2xl:justify-start 2xl:items-start '>
-                          <div className='h-[50%] '><BiEditAlt size={65}  color='#3F3F46'/></div>
-                          <div className='h-[50%] py-4 text-[2em] font-Poppins font-semibold tracking-widest text-[#7C2629] '>What I Do</div>
+                          <div className='h-[50%] border-l-[4px] border-[#7C2629] px-2 w-full'><BiEditAlt size={65}  color='#3F3F46'/></div>
+                          <div className='h-[50%] py-3 text-[2em] font-Poppins font-semibold tracking-widest text-[#7C2629] '>What I Do</div>
                         </div>
-                        <div className='min-w-[20%] h-[50%] font-Poppins font-thin text-[1.4em] tracking-[0.15em] py-4 lg:text-center md:text-center sm:text-center'>
+                        <div className='w-full h-[50%] font-Poppins 
+                        font-thin text-[1.4em] tracking-[0.14em] 
+                        lg:text-center md:text-center sm:text-center text-[#3F3F46] '>
                           <p>Excels in delivering solutions, ranging from responsive designs to complex web applications.</p>
                         </div>
                       </div>
@@ -80,12 +87,14 @@ export const About = () => {
 
                   <div className="flex-1">
                     <FadeIn direction="right" delay={0.8}>
-                      <div className='min-w-[20%] flex flex-col min-h-[90%] py-[2.2em]'>
-                        <div className='flex flex-col h-[50%] justify-center items-center xl:justify-start xl:items-start 2xl:justify-start 2xl:items-start'>
-                          <div  className='h-[50%]'><BiCheckDouble size={65} color='#3F3F46'/></div>
-                          <div className='h-[50%] py-4 text-[1.8em] font-Poppins font-semibold text-[#7C2629] tracking-widest'>Why Choose Me</div>
+                      <div className='flex flex-col '>
+                        <div className='flex flex-col h-[50%] xl:justify-start xl:items-start 2xl:justify-start 2xl:items-start'>
+                          <div  className='h-[50%] border-l-[4px] border-[#7C2629] px-2  w-full'><BiCheckDouble size={65} color='#3F3F46'/></div>
+                          <div className='h-[50%] py-3 text-[2em] font-Poppins font-semibold text-[#7C2629] tracking-widest '>Why Choose Me</div>
                         </div>
-                        <div className='max-w-[100%] h-[50%] font-Poppins font-thin text-[1.39em] tracking-[0.14em] py-4 lg:text-center md:text-center sm:text-center'>
+                        <div className='max-w-[100%] h-[50%] font-Poppins
+                         font-thin text-[1.39em] tracking-[0.14em] lg:text-center
+                          md:text-center sm:text-center text-[#3F3F46]'>
                           <p>Consistently exceeds client expectations through innovative and future-proof solutions</p>
                         </div>
                       </div>
@@ -121,7 +130,7 @@ export const About = () => {
                           <div className='h-[50%]'><BiUser size={65}  color='#3F3F46' /></div>
                           <div className='h-[50%] py-4 text-[1.8em] font-Poppins font-bold tracking-widest text-[#7C2629] '>WHO I AM</div>
                         </div>
-                        <div className='w-full h-[50%] font-Poppins font-thin text-[1.4em] py-4 tracking-[0.14em] lg:text-center md:text-center sm:text-center'>
+                        <div className='w-full h-[50%] font-Poppins font-thin text-[1.4em] py-4 tracking-[0.14em] lg:text-center md:text-center sm:text-center text-[#3F3F46]'>
                           <p>Web Developer with expertise in both frontend and backend technologies.</p>
                         </div>
                       </div>
@@ -131,7 +140,7 @@ export const About = () => {
                     <SwiperSlide>
 
                       <div className='min-w-[20%] flex flex-col min-h-[90%] py-[2em]'>
-                        <div className='flex flex-col h-[50%] justify-center items-center xl:justify-start xl:items-start 2xl:justify-start 2xl:items-start '>
+                        <div className='flex flex-col h-[50%] justify-center items-center xl:justify-start xl:items-start 2xl:justify-start 2xl:items-start text-[#3F3F46]'>
                           <div className='h-[50%] '><BiEditAlt size={65}  color='#3F3F46'/></div>
                           <div className='h-[50%] py-4 text-[1.8em] font-Poppins font-bold tracking-widest text-[#7C2629] '>WHAT I DO</div>
                         </div>
@@ -148,7 +157,7 @@ export const About = () => {
                             <div  className='h-[50%]'><BiCheckDouble size={65} color='#3F3F46'/></div>
                               <div className='h-[50%] py-4 text-[1.8em] font-Poppins font-bold text-[#7C2629] tracking-widest'>WHY CHOOSE ME</div>
                         </div>
-                        <div className='max-w-[100%] h-[50%] font-Poppins font-thin text-[1.3em] tracking-[0.14em] py-4 lg:text-center md:text-center sm:text-center'>
+                        <div className='max-w-[100%] h-[50%] font-Poppins font-thin text-[1.3em] tracking-[0.14em] py-4 lg:text-center md:text-center sm:text-center text-[#3F3F46]'>
                               <p>Consistently exceeds client expectations through innovative and future-proof solutions</p>
                         </div>
                       </div>
@@ -162,7 +171,7 @@ export const About = () => {
             {/* 4th */}
             <div className='flex flex-col w-full justify-center items-center gap-4 p-4 xl:py-4 2xl:py-4 py-[1em]'>
               <div className='font-Poppins text-[1.4em] xl:text-[2em] 2xl:text-[2em] tracking-[0.2em] text-[#3F3F46] font-bold text-center'>Tell me about your project</div>
-              <div className=' bg-[#475569] font-Poppins tracking-widest font-semibold rounded-full text-[#DDCFC5] text-[0.8em] min-w-[12em] py-[1.4em]  px-[2.4em] text-center'>EMAIL ME</div>
+              <div className=' bg-[#475569] font-Poppins tracking-widest font-semibold rounded-full text-[#DDCFC5]  text-[0.8em] min-w-[12em] py-[1.4em]  px-[2.4em] text-center'>EMAIL ME</div>
             </div>
 
           </div>

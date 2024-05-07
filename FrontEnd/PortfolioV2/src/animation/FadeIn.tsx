@@ -32,7 +32,7 @@ const FadeIn = ({ children, delay, direction, fullWidth, padding }: FadeInType) 
 
   return <div 
           ref={ref} 
-          className={`${fullWidth ? "w-full" : "w-auto"}
+          className={`${fullWidth ? "w-full bg-slate-300" : "w-fit"}
           ${padding ? "px-10" : "px-0"} flex items-center justify-center`}
           >
                 <motion.div variants={{
