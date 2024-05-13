@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import Navlink from "../Navlink";
 import FadeIn from "../../animation/FadeIn";
+import  McIcon from '../../assets/images/McIcon.svg'
 
 import { Icon } from '@iconify-icon/react';
 import { AiOutlineClose } from "react-icons/ai";
@@ -26,8 +27,9 @@ export const Introduction = () => {
                 {/*Navigation*/}
                 <div className='h-fit w-full flex flex-row justify-between items-center py-6'>
 
-                    <div className=''>
-                        <h1 className='font-Poppins font-black text-[2em] cursor-pointer text-[#3F3F46] sm:text-[1.4em] md:text-[1.8em]'>BAQUE</h1>
+                    <div className='w-[4em] h-[4em]'>
+                        
+                       <img src={McIcon} alt="McIcon" className='w-full h-full' />
                     </div>
 
                     <div className='max-w-[40%] min-w-[60%] xl:block 2xl:block hidden'>
